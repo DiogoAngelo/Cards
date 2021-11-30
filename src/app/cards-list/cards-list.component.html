@@ -1,0 +1,18 @@
+<div class="container">
+  <ul *ngIf="cardsList">
+    <li *ngFor="let card of cardsList" class="card">
+      <div class="main">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDHD6oT9ZvfnrjO5qvw1haUSff33hhsG1PtMloN-SbUI_tGIZJvgnHqDIK1sBm9NbVKc&usqp=CAU" alt="default img">
+        <h4>{{card.name}}</h4>
+      </div>
+      <div class="body">
+        <div class="badges">
+          <span>{{card.kind}}</span>
+          <span>{{card.duration}} min</span>
+        </div>
+        <p>{{card.shortDescription}}</p>
+      </div>
+      <button class="btn btn-primary">Detalhes</button>
+    </li>
+  </ul>
+</div>

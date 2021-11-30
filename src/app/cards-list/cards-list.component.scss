@@ -1,0 +1,72 @@
+ul {
+  list-style: none
+}
+.container ul  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container ul li {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+.main {
+  position: relative;
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+h4 {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  color: #5D6A82;
+}
+
+img {
+  width: 100%;
+}
+
+.body {
+  height: 160px;
+  padding: 0px 20px;
+}
+
+.body p {
+  text-align: center;
+  color: #5D6A82;
+}
+.badges {
+  margin: 20px 0;
+}
+
+.badges span {
+  display: inline-block;
+  background-color: #67D1AB;
+  color: #fff;
+  font-size: 12px;
+  width: 80px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.badges span + span {
+  margin-left: 20px;
+}
+
+button {
+  background-color: #5D5FEF;
+  height: 50px;
+}
+
+button:hover {
+  background-color: #393ba3;
+}

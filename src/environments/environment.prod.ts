@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  api: 'https://jm-design-sprint-api-dev.herokuapp.com'
 };
