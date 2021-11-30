@@ -12,7 +12,7 @@
         </div>
         <p>{{card.shortDescription}}</p>
       </div>
-      <button class="btn btn-primary">Detalhes</button>
+      <button [routerLink]="['/details', card.id]" class="btn">Detalhes</button>
     </li>
   </ul>
 </div>
