@@ -1,7 +1,7 @@
 import { CardsDetailsInterface } from './../interfaces/cards-details.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CardsService } from '../cards.service';
+import { ApisService } from '../api.service';
 
 @Component({
   selector: 'app-cards-details',
@@ -11,19 +11,17 @@ import { CardsService } from '../cards.service';
 export class CardsDetailsComponent implements OnInit {
 
   id: any = this.route.snapshot.params.id;
-  cardDetails: any;
-  stepsArray!: any[];
+  card: any;
 
   constructor(
-    private service: CardsService,
+    private service: ApisService,
     private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
     this.service.get(`${'cards'}/${this.id}`).then((data)=> {
-      this.cardDetails = data;
-      let steps = (data as CardsDetailsInterface).steps;
-      this.stepsArray = steps.split('\n');
+      this.card = data;
+      this.card.steps = this.card.steps.split('\n')
     })
   }
 }

@@ -1,32 +1,32 @@
-<div *ngIf="cardDetails" class="container">
+<div *ngIf="card" class="container">
   <a class="back" [routerLink]="['/']">Voltar</a>
   <div class="full-card">
     <div class="main">
       <img src="http://www.decomat.pt/index/images/joomlart/demo/default.jpg" alt="default img">
-      <h4>{{cardDetails.name}}</h4>
+      <h4>{{card.name}}</h4>
     </div>
     <div class="body">
       <ul class="badges">
-        <li *ngFor="let stage of cardDetails.stages">
+        <li *ngFor="let stage of card.stages">
           {{stage.name}}</li>
-        <li>{{cardDetails.kind.label}}</li>
-        <li>{{cardDetails.duration}}min</li>
+        <li>{{card.kind.label}}</li>
+        <li>{{card.duration}}min</li>
       </ul>
       <div class="input-output">
         <div class="input">
           <h6>Input</h6>
-          <p>{{cardDetails.input}}</p>
+          <p>{{card.input}}</p>
         </div>
         <div class="output">
           <h6>Output</h6>
-          <p>{{cardDetails.output}}</p>
+          <p>{{card.output}}</p>
         </div>
       </div>
       <div class="steps">
         <h6>Passo a passo</h6>
         <ul>
-          <li *ngFor="let item of stepsArray">
-            {{item}}
+          <li *ngFor="let step of card.steps">
+            {{step}}
           </li>
         </ul>
       </div>

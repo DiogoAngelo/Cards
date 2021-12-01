@@ -1,6 +1,6 @@
 import { CardsListInterface } from './../interfaces/cards-list.interface';
 import { Component, OnInit } from '@angular/core';
-import { CardsService } from '../cards.service';
+import { ApisService } from '../api.service';
 
 @Component({
   selector: 'app-cards-list',
@@ -11,14 +11,11 @@ export class CardsListComponent implements OnInit {
 
   cardsList!: any[];
 
-  constructor(private service: CardsService) { }
+  constructor(private service: ApisService) { }
 
   ngOnInit() {
     this.service.get('cards').then(cardsList => {
       this.cardsList = (cardsList as CardsListInterface).cards;
-      console.log(cardsList);
     })
-
   }
-
 }
