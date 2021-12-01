@@ -9,7 +9,19 @@ export class ApisService {
 
   constructor(private http: HttpClient) { }
 
-  get(endpoint: any) {
-   return this.http.get(`${environment.api}/${endpoint}`).toPromise();
+  get(endpoint: any, params = {}) {
+   return this.http.get(`${environment.api}/${endpoint}`, this.getOptions(params))
+   .toPromise();
+  }
+
+  private getOptions(params = {}, body = {}) {
+    const headers: any = {
+      'Content-Type': 'application/json',
+    };
+    return {
+      headers,
+      params,
+      body,
+    };
   }
 }

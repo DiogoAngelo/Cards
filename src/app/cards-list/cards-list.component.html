@@ -1,5 +1,5 @@
 <div class="container">
-  <ul *ngIf="cardsList">
+  <ul *ngIf="cardsList" class="cards-list">
     <li *ngFor="let card of cardsList" class="card">
       <div class="main">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDHD6oT9ZvfnrjO5qvw1haUSff33hhsG1PtMloN-SbUI_tGIZJvgnHqDIK1sBm9NbVKc&usqp=CAU" alt="default img">
@@ -15,4 +15,11 @@
       <button [routerLink]="['/details', card.id]" class="btn">Detalhes</button>
     </li>
   </ul>
+  <div class="pagination">
+    <ul>
+      <li [ngClass]="{disabled: !hasPrevious}"><a (click)="previousPage()">Anterior</a></li>
+      <li>Pagina {{currentPage}}</li>
+      <li [ngClass]="{disabled: !hasNext}"><a (click)="nextPage()">Próxima</a></li>
+    </ul>
+  </div>
 </div>

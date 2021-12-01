@@ -1,13 +1,13 @@
 ul {
   list-style: none
 }
-.container ul  {
+.cards-list  {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.container ul li {
+.cards-list li {
   width: 320px;
   display: flex;
   flex-direction: column;
@@ -72,3 +72,41 @@ button:hover {
   background-color: #393ba3;
   color: #fff;
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination ul {
+  display: flex;
+  padding: 30px 0;
+}
+
+.pagination li {
+  border: 1px solid #cfcfcf;
+  color: #666;
+  padding: 5px 15px;
+}
+
+.pagination li:first-child {
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+}
+
+.pagination li:last-child {
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+
+.pagination a {
+  cursor: pointer;
+  color: #8A8DCE;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .5;
+}
+

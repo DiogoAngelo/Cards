@@ -8,4 +8,5 @@ export interface CardsDetailsInterface {
   output: string;
   shortDescription: string;
   steps: string;
+  stages: any[];
 }
