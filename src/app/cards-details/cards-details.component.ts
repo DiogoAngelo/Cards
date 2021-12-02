@@ -21,7 +21,7 @@ export class CardsDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.service.get(`${'cards'}/${this.id}`).then((data)=> {
       this.card = data;
-      this.card.steps = this.card.steps.split('\n')
+      this.card.steps = this.card.steps.split('\n');
     })
   }
 }

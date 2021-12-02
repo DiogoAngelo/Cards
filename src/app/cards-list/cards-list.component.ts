@@ -15,15 +15,23 @@ export class CardsListComponent implements OnInit {
   totalPages!: number;
   hasPrevious: boolean = false;
   hasNext: boolean = true;
+  cardsAvailable: any;
+  totalCards!: number;
+  slug: string = '';
 
   constructor(private service: ApisService) { }
 
   ngOnInit() {
-    this.loadPage(1);
+    this.loadCards(1);
+    this.loadStages();
   }
 
-  loadPage(page: number) {
-    this.service.get('cards',{page: page})
+  loadCards(page: number, slug: string = '') {
+    let payload: any = {page: page}
+    if (slug != '') {
+      payload['stage'] = slug;
+    }
+    this.service.get('cards', payload)
       .then(cardsList => {
       let cards = (cardsList as CardsListInterface);
       this.cardsList = cards.cards;
@@ -36,11 +44,29 @@ export class CardsListComponent implements OnInit {
 
   previousPage() {
     window.scroll(0,0);
-    this.loadPage(this.currentPage - 1)
+    this.loadCards(this.currentPage - 1, this.slug)
   }
 
   nextPage() {
     window.scroll(0,0)
-    this.loadPage(this.currentPage + 1)
+    this.loadCards(this.currentPage + 1, this.slug)
+  }
+
+  filter(slug: any) {
+    this.slug = slug;
+    this.loadCards(1, slug);
+  }
+
+  loadStages() {
+    this.service.get('').then(data => {
+      this.cardsAvailable = data;
+      this.cardsAvailable = this.cardsAvailable.cards_available;
+       this.totalCards = this.cardsAvailable.map((item: any) => {
+        return item.cards;
+
+      }).reduce((prev: number, curr: number) => {
+        return prev + curr;
+      },0);
+    });
   }
 }

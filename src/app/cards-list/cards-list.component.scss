@@ -1,10 +1,90 @@
 ul {
   list-style: none
 }
-.cards-list  {
+
+.cards-container, .header {
+  width: 1005px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.label {
+  background-color: #5D5FEF;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label h5{
+  font-weight:lighter;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  width: 1020px;
+  margin: 0;
+}
+
+.title {
+  color: #344563;
+}
+
+.filter ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.filter li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  border: 1px solid #5D5FEF;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #5D5FEF;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter li:hover, .filter li.active {
+  background-color: #5D5FEF;
+  color: #fff;
+}
+
+.filter li + li  {
+  border-left: none;
+}
+
+.total-cards {
+  background-color: #67D1AB;
+  color: #fff;
+  font-weight: normal;
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 2px;
+  margin-bottom: 5px;
+}
+
+.cards-list ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+  padding: 0;
 }
 
 .cards-list li {
@@ -12,7 +92,6 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 10px;
 }
 
 .main {
@@ -44,6 +123,7 @@ img {
   text-align: center;
   color: #5D6A82;
 }
+
 .badges {
   margin: 20px 0;
 }
@@ -102,11 +182,10 @@ button:hover {
 
 .pagination a {
   cursor: pointer;
-  color: #8A8DCE;
+  color: #4A4CBF;
 }
 
 .disabled {
   pointer-events: none;
   opacity: .5;
 }
-

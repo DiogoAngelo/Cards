@@ -1,25 +1,48 @@
-<div class="container">
-  <ul *ngIf="cardsList" class="cards-list">
-    <li *ngFor="let card of cardsList" class="card">
-      <div class="main">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDHD6oT9ZvfnrjO5qvw1haUSff33hhsG1PtMloN-SbUI_tGIZJvgnHqDIK1sBm9NbVKc&usqp=CAU" alt="default img">
-        <h4>{{card.name}}</h4>
-      </div>
-      <div class="body">
-        <div class="badges">
-          <span>{{card.kind}}</span>
-          <span>{{card.duration}} min</span>
-        </div>
-        <p>{{card.shortDescription}}</p>
-      </div>
-      <button [routerLink]="['/details', card.id]" class="btn">Detalhes</button>
-    </li>
-  </ul>
-  <div class="pagination">
-    <ul>
-      <li [ngClass]="{disabled: !hasPrevious}"><a (click)="previousPage()">Anterior</a></li>
-      <li>Pagina {{currentPage}}</li>
-      <li [ngClass]="{disabled: !hasNext}"><a (click)="nextPage()">Próxima</a></li>
-    </ul>
+<div class="general-container">
+  <div class="label">
+    <h5>Design Sprint Deck</h5>
+  </div>
+  <div class="header">
+    <h1 class="title">Cartões</h1>
+    <button class="btn">Adicionar Cartão</button>
+  </div>
+  <div class="cards-container">
+    <div class="filter">
+      <ul *ngIf="cardsAvailable">
+        <li (click)="filter('')" [ngClass]="{active: slug == ''}">Todos<span class="total-cards">{{totalCards}}</span>
+        </li>
+        <li *ngFor="let card of cardsAvailable" [ngClass]="{active: slug == card.slug}" (click)="filter(card.slug)">
+          {{card.stage}}
+          <span class="total-cards">{{card.cards}}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="cards-list">
+      <ul *ngIf="cardsList">
+        <li *ngFor="let card of cardsList" class="card">
+          <div class="main">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDHD6oT9ZvfnrjO5qvw1haUSff33hhsG1PtMloN-SbUI_tGIZJvgnHqDIK1sBm9NbVKc&usqp=CAU"
+              alt="default img">
+            <h4>{{card.name}}</h4>
+          </div>
+          <div class="body">
+            <div class="badges">
+              <span>{{card.kind}}</span>
+              <span>{{card.duration}} min</span>
+            </div>
+            <p>{{card.shortDescription}}</p>
+          </div>
+          <button [routerLink]="['/details', card.id]" class="btn">Detalhes</button>
+        </li>
+      </ul>
+    </div>
+    <div class="pagination">
+      <ul>
+        <li [ngClass]="{disabled: !hasPrevious}"><a (click)="previousPage()">Anterior</a></li>
+        <li>Pagina {{currentPage}}</li>
+        <li [ngClass]="{disabled: !hasNext}"><a (click)="nextPage()">Próxima</a></li>
+      </ul>
+    </div>
   </div>
 </div>
