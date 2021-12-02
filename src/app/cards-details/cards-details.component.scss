@@ -7,6 +7,38 @@
   margin: 50px auto;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.edit-delete {
+  display: flex;
+}
+
+.delete {
+  background-color: #ff6576;
+  margin-right: 10px;
+}
+
+.edit {
+  background-color: #19c9ab;
+}
+
+.delete, .edit {
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .full-card {
   border: 1px solid #cfcfcf;
   border-radius: 10px;

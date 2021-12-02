@@ -14,6 +14,11 @@ export class ApisService {
    .toPromise();
   }
 
+  delete(endpoint: any, params = {}) {
+    return this.http.delete(`${environment.api}/${endpoint}`, this.getOptions())
+    .toPromise();
+  }
+
   private getOptions(params = {}, body = {}) {
     const headers: any = {
       'Content-Type': 'application/json',

@@ -1,5 +1,13 @@
 <div *ngIf="card" class="container">
-  <a class="back" [routerLink]="['/']">Voltar</a>
+  <div class="header">
+    <a class="back" [routerLink]="['/']">Voltar</a>
+    <div class="edit-delete">
+      <a (click)="delete()" class="delete"><i class="fa fa-trash"></i></a>
+      <a class="edit">
+        <i class="fa fa-pencil"></i>
+      </a>
+    </div>
+  </div>
   <div class="full-card">
     <div class="main">
       <img src="http://www.decomat.pt/index/images/joomlart/demo/default.jpg" alt="default img">
