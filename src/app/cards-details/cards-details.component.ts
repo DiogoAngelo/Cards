@@ -1,4 +1,3 @@
-import { CardsDetailsInterface } from './../interfaces/cards-details.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApisService } from '../api.service';

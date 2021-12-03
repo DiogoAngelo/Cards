@@ -1,0 +1,66 @@
+<div class="container">
+  <a class="back" [routerLink]="['/']">Voltar</a>
+  <div class="form-container">
+    <div class="form-title">
+      <h4>Novo Cartão</h4>
+    </div>
+    <form [formGroup]="form">
+      <div class="form-group mb-4">
+        <label for="name" class="form-label">Nome</label>
+        <input formControlName="name" type="text" #name class="form-control">
+      </div>
+      <div class="form-group mb-4">
+        <label for="shortDescription" class="form-label">Descrição curta</label>
+        <textarea formControlName="shortDescription" name="shortDescription" id="shortDescription" cols="30" rows="2" class="form-control"></textarea>
+      </div>
+      <div class="form-group mb-4">
+        <label for="duration" class="form-label">Duração (minutos)</label>
+        <textarea formControlName="duration" name="duration" id="duration" cols="30" rows="2" class="form-control"></textarea>
+      </div>
+      <div class="form-group mb-4">
+        <label for="kind">Kind</label>
+        <ng-select
+        formControlName="kind"
+        [items]="kinds"
+         bindLabel="label"
+         bindValue="id"
+         id="kind">
+       </ng-select>
+      </div>
+      <div class="form-group mb-4">
+        <label for="stage">Stage</label>
+        <ng-select
+        formControlName="stageIds"
+        [items]="stages"
+         bindLabel="name"
+         bindValue="id"
+         [multiple]="true"
+         id="stage">
+       </ng-select>
+      </div>
+      <div class="input-output row">
+        <div class="col-12 col-md-6">
+          <div class="form-group mb-4">
+            <label for="input" class="form-label">Input</label>
+            <textarea formControlName="input" name="input" id="input" cols="30" rows="2" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-group mb-4">
+            <label for="output" class="form-label">Output</label>
+            <textarea formControlName="output" name="output" id="output" cols="30" rows="2" class="form-control"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-4">
+        <label for="steps" class="form-label">Passo a Passo</label>
+        <textarea formControlName="steps" name="steps" id="steps" cols="30" rows="2" class="form-control"></textarea>
+      </div>
+      <div class="form-group mb-4">
+        <label for="full-description" class="form-label">Descrição Completa</label>
+        <textarea formControlName="description" name="full-description" id="full-description" cols="30" rows="10" class="form-control"></textarea>
+      </div>
+      <button class="btn">Salvar</button>
+    </form>
+  </div>
+</div>
