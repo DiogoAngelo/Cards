@@ -7,18 +7,37 @@
     <form [formGroup]="form">
       <div class="form-group mb-4">
         <label for="name" class="form-label">Nome</label>
-        <input formControlName="name" type="text" #name class="form-control">
+        <input
+        formControlName="name"
+        type="text"
+        #name
+        class="form-control">
+        <app-validation-errors [controls]="form.controls.name"></app-validation-errors>
       </div>
       <div class="form-group mb-4">
         <label for="shortDescription" class="form-label">Descrição curta</label>
-        <textarea formControlName="shortDescription" name="shortDescription" id="shortDescription" cols="30" rows="2" class="form-control"></textarea>
+        <textarea
+        formControlName="shortDescription"
+        name="shortDescription" id="shortDescription"
+        cols="30"
+        rows="2"
+        class="form-control"></textarea>
+        <app-validation-errors [controls]="form.controls.shortDescription"></app-validation-errors>
+
       </div>
       <div class="form-group mb-4">
         <label for="duration" class="form-label">Duração (minutos)</label>
-        <textarea formControlName="duration" name="duration" id="duration" cols="30" rows="2" class="form-control"></textarea>
+        <textarea
+        formControlName="duration"
+        name="duration"
+        id="duration"
+        cols="30"
+        rows="2"
+        class="form-control"></textarea>
+        <app-validation-errors [controls]="form.controls.duration"></app-validation-errors>
       </div>
       <div class="form-group mb-4">
-        <label for="kind">Kind</label>
+        <label for="kind">Tipo</label>
         <ng-select
         formControlName="kind"
         [items]="kinds"
@@ -26,9 +45,10 @@
          bindValue="id"
          id="kind">
        </ng-select>
+       <app-validation-errors [controls]="form.controls.kind"></app-validation-errors>
       </div>
       <div class="form-group mb-4">
-        <label for="stage">Stage</label>
+        <label for="stage">Etapas</label>
         <ng-select
         formControlName="stageIds"
         [items]="stages"
@@ -37,28 +57,57 @@
          [multiple]="true"
          id="stage">
        </ng-select>
+       <app-validation-errors [controls]="form.controls.stageIds"></app-validation-errors>
       </div>
       <div class="input-output row">
         <div class="col-12 col-md-6">
           <div class="form-group mb-4">
             <label for="input" class="form-label">Input</label>
-            <textarea formControlName="input" name="input" id="input" cols="30" rows="2" class="form-control"></textarea>
+            <textarea
+            formControlName="input"
+            name="input"
+            id="input"
+            cols="30"
+            rows="2"
+            class="form-control"></textarea>
+            <app-validation-errors [controls]="form.controls.input"></app-validation-errors>
           </div>
         </div>
         <div class="col-12 col-md-6">
           <div class="form-group mb-4">
             <label for="output" class="form-label">Output</label>
-            <textarea formControlName="output" name="output" id="output" cols="30" rows="2" class="form-control"></textarea>
+            <textarea
+            formControlName="output"
+            name="output"
+            id="output"
+            cols="30"
+            rows="2"
+            class="form-control"></textarea>
+            <app-validation-errors [controls]="form.controls.output"></app-validation-errors>
           </div>
         </div>
       </div>
       <div class="form-group mb-4">
         <label for="steps" class="form-label">Passo a Passo</label>
-        <textarea formControlName="steps" name="steps" id="steps" cols="30" rows="2" class="form-control"></textarea>
+        <textarea
+        formControlName="steps"
+        name="steps"
+        id="steps"
+        cols="30"
+        rows="2"
+        class="form-control"></textarea>
+        <app-validation-errors [controls]="form.controls.steps"></app-validation-errors>
       </div>
       <div class="form-group mb-4">
         <label for="full-description" class="form-label">Descrição Completa</label>
-        <textarea formControlName="description" name="full-description" id="full-description" cols="30" rows="10" class="form-control"></textarea>
+        <textarea
+        formControlName="description"
+        name="full-description"
+        id="full-description"
+        cols="30"
+        rows="10"
+        class="form-control"></textarea>
+        <app-validation-errors [controls]="form.controls.description"></app-validation-errors>
       </div>
       <button class="btn">Salvar</button>
     </form>

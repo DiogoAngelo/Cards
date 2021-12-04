@@ -35,7 +35,6 @@ export class FormComponent implements OnInit {
       this.kinds = outcome.kinds;
       this.stages = outcome.stages;
     });
+    console.log(this.form);
   }
-
-
 }

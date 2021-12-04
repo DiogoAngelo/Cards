@@ -9,13 +9,15 @@ import { CardsDetailsComponent } from './cards-details/cards-details.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ValidationErrorsComponent } from './form/validation-errors/validation-errors.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsListComponent,
     CardsDetailsComponent,
-    FormComponent
+    FormComponent,
+    ValidationErrorsComponent
   ],
   imports: [
     BrowserModule,
