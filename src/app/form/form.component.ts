@@ -1,6 +1,8 @@
 import { ApisService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -15,7 +17,8 @@ export class FormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private service: ApisService
+    private service: ApisService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -35,6 +38,15 @@ export class FormComponent implements OnInit {
       this.kinds = outcome.kinds;
       this.stages = outcome.stages;
     });
-    console.log(this.form);
+  }
+
+  save() {
+    this.service.post('cards', this.form.value)
+    .then(() => {
+      this.router.navigate(['/'])
+
+    }).catch(data => {
+      console.log(data.error.erros);
+    })
   }
 }

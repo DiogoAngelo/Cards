@@ -9,13 +9,18 @@ export class ApisService {
 
   constructor(private http: HttpClient) { }
 
-  get(endpoint: any, params = {}) {
+  get(endpoint: string, params = {}) {
    return this.http.get(`${environment.api}/${endpoint}`, this.getOptions(params))
    .toPromise();
   }
 
-  delete(endpoint: any, params = {}) {
+  delete(endpoint: string, params = {}) {
     return this.http.delete(`${environment.api}/${endpoint}`, this.getOptions())
+    .toPromise();
+  }
+
+  post(endpoint: string, params = {}) {
+    return this.http.post(`${environment.api}/${endpoint}`, params, this.getOptions())
     .toPromise();
   }
 

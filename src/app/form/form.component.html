@@ -23,7 +23,6 @@
         rows="2"
         class="form-control"></textarea>
         <app-validation-errors [controls]="form.controls.shortDescription"></app-validation-errors>
-
       </div>
       <div class="form-group mb-4">
         <label for="duration" class="form-label">Duração (minutos)</label>
@@ -109,7 +108,7 @@
         class="form-control"></textarea>
         <app-validation-errors [controls]="form.controls.description"></app-validation-errors>
       </div>
-      <button class="btn">Salvar</button>
+      <button (click)="save()" [ngClass]="{disabled: form.invalid}" class="btn">Salvar</button>
     </form>
   </div>
 </div>
