@@ -1,9 +1,10 @@
+<app-label></app-label>
 <div *ngIf="card" class="container">
   <div class="header">
     <a class="back" [routerLink]="['/']">Voltar</a>
     <div class="edit-delete">
       <a (click)="delete()" class="delete"><i class="fa fa-trash"></i></a>
-      <a class="edit">
+      <a [routerLink]="['/cards',id, 'edit']" class="edit">
         <i class="fa fa-pencil"></i>
       </a>
     </div>

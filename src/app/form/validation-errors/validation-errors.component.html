@@ -1,3 +1,7 @@
-<div *ngIf="controls.touched && controls.invalid" class="d-block mt-1 text-danger">
-  <div *ngIf="controls.errors.required">Campo Obrigatório</div>
-</div>
+ <div *ngIf="controls">
+  <div *ngIf="controls.touched && controls.invalid" class="d-block mt-1 text-danger">
+    <div *ngIf="controls.errors?.required">Campo Obrigatório</div>
+  </div>
+ </div>
+
+

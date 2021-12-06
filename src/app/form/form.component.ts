@@ -46,7 +46,7 @@ export class FormComponent implements OnInit {
       this.router.navigate(['/'])
 
     }).catch(data => {
-      console.log(data.error.erros);
+      alert(data.error.erros);
     })
   }
 }

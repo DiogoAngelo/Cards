@@ -14,13 +14,18 @@ export class ApisService {
    .toPromise();
   }
 
-  delete(endpoint: string, params = {}) {
-    return this.http.delete(`${environment.api}/${endpoint}`, this.getOptions())
+  post(endpoint: string, params = {}) {
+    return this.http.post(`${environment.api}/${endpoint}`, params, this.getOptions())
     .toPromise();
   }
 
-  post(endpoint: string, params = {}) {
-    return this.http.post(`${environment.api}/${endpoint}`, params, this.getOptions())
+  patch(endpoint: any, params = {}) {
+    return this.http.patch(`${environment.api}/${endpoint}`, params, this.getOptions())
+    .toPromise();
+  }
+
+  delete(endpoint: string, params = {}) {
+    return this.http.delete(`${environment.api}/${endpoint}`, this.getOptions())
     .toPromise();
   }
 

@@ -10,6 +10,8 @@ import { FormComponent } from './form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ValidationErrorsComponent } from './form/validation-errors/validation-errors.component';
+import { EditComponent } from './form/edit/edit.component';
+import { LabelComponent } from './label/label.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ValidationErrorsComponent } from './form/validation-errors/validation-e
     CardsListComponent,
     CardsDetailsComponent,
     FormComponent,
-    ValidationErrorsComponent
+    ValidationErrorsComponent,
+    EditComponent,
+    LabelComponent
   ],
   imports: [
     BrowserModule,
